@@ -96,7 +96,7 @@ document.body.classList.add('js');
       var p=$(t.dataset.target);if(p)p.hidden=all?(t.dataset.target==='teszt'):!on;
     });
     document.body.classList.toggle('on-bvk',id==='bvk');
-    if(!init){try{history.replaceState(null,'','#'+id)}catch(e){}}
+    if(!init){try{history.replaceState(null,'',id===ids[0]?location.pathname+location.search:'#'+id)}catch(e){}}
     if(scroll){var nav=document.querySelector('.tabbar'),bar=$('brandbar'),pn=$(id);if(nav&&pn){try{var top=pn.getBoundingClientRect().top+window.pageYOffset-nav.offsetHeight-(bar?bar.offsetHeight:0);window.scrollTo({top:Math.max(0,top),behavior:'auto'})}catch(e){}}}
   }
   tabs.forEach(function(t,i){
